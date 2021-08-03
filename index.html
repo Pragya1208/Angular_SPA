@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="manifest" href="/new_web_sdk_test/manifest.json">
+    <script type="text/javascript">
+        var clevertap = { event: [], profile: [], account: [], onUserLogin: [], notifications: [], privacy: [], region: 'sk1' };
+        // clevertap.account.push({ id: "W48-7W7-495Z" });
+        clevertap.account.push({ id: "W6W-797-865Z" });
+        clevertap.enablePersonalization = true;
+        (function() {
+            var wzrk = document.createElement("script");
+            wzrk.type = "text/javascript";
+            wzrk.async = true;
+            wzrk.src = "clevertap.js";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(wzrk, s);
+        })();
+    </script>
+</head>
+<style>
+    #nav{
+        width: 19%;
+        position: absolute;
+        top: 50px;
+        right: 0px;
+        display: inline-block;
+        background: #429cd6;
+        border: 1px solid #3c87b2;
+
+    }
+    #page-content{
+
+        width: 79%;
+        display: inline-block;
+        vertical-align: top;
+        padding: 8px;
+        padding-top: 0px;
+    }
+    ul{
+        list-style: none;
+        padding-right: 10px;
+    }
+    li{
+        background-color: #ffffff;
+        color: white;
+        margin: 5px;
+        text-decoration: none;
+        text-align: center;
+        padding: 3px;
+        font-size: 20px;
+        font-family: 'Helvetica', sans-serif;
+    }
+    a{
+        color: black;
+        text-decoration: none;
+    }
+</style>
+<!-- Load AngularJS and Angular Route JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+
+<body ng-app="myApp">
+
+<!-- AngularJS Navigation -->
+<div id="nav">
+    <ul>
+        <li><a href="#!">Login</a></li>
+        <li><a href="#!about">Product View</a></li>
+        <li><a href="#!services">Added to Cart</a></li>
+        <li><a href="#!projects">Charged</a></li>
+    </ul>
+</div>
+<div id="page-content">
+    <h1>AngularJS Single Page Application</h1>
+
+    <!-- this is where page content will be loaded -->
+    <div ng-view></div>
+</div>
+<!-- Load AngularJS Module and Angular Route Configuration -->
+<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
